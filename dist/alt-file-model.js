@@ -13,7 +13,7 @@
 
             reader.onload = function(loadEv) {
               scope.$apply(function() {
-                scope.ngFileModel = {
+                scope.altFileModel = {
                   lastModified: changeEv.target.files[0].lastModified,
                   lastModifiedDate: changeEv.target.files[0].lastModifiedDate,
                   name: changeEv.target.files[0].name,
