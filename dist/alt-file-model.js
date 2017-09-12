@@ -8,27 +8,27 @@
           altFileModel: "="
         },
         link: function(scope, element, attrs) {
-          element.bind("change", function(ev) {
+          element.bind("change", function(changeEv) {
             var reader = new FileReader();
 
-            reader.onload = function(loadEv) {
+            reader.onload = function(loadchangeEv) {
               scope.$apply(function() {
                 scope.ngFileModel = {
-                  lastModified: ev.target.files[0].lastModified,
-                  lastModifiedDate: ev.target.files[0].lastModifiedDate,
-                  name: ev.target.files[0].name,
-                  size: ev.target.files[0].size,
-                  type: ev.target.files[0].type,
-                  file: ev.target.files[0],
-                  files: ev.target.files,
+                  lastModified: changeEv.target.files[0].lastModified,
+                  lastModifiedDate: changeEv.target.files[0].lastModifiedDate,
+                  name: changeEv.target.files[0].name,
+                  size: changeEv.target.files[0].size,
+                  type: changeEv.target.files[0].type,
+                  file: changeEv.target.files[0],
+                  files: changeEv.target.files,
 
                   // data === file in b64
-                  data: loadEv.target.result
+                  data: loadchangeEv.target.result
                 };
               });
             };
 
-            reader.readAsDataURL(changeEv.target.files[0]);
+            reader.readAsDataURL(changechangeEv.target.files[0]);
           });
         }
       };
